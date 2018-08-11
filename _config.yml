@@ -16,14 +16,15 @@
 lang: zh-CN
 title: 小太阳的小石头
 email: xulei99@hotmail.com
-description: This is my web page. 
+description: 就是个痕迹 
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: https://runnerstone.github.io # the base hostname & protocol for your site.
 author:
   name: runner
-  twitter:
-  picture:
+  weibo: 能不能长点心的石头
+  picture: 
 twitter_username:
+weibo_username: 能不能长点心的石头
 github_username: runnerstone
 logo: /assets/images/panda.png # path of site logo, e.g. "/assets/images/logo.png"
 search: yes # true, false (default)
