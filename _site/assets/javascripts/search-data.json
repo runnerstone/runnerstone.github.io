@@ -1,4 +1,9 @@
 var store = [{
+        "title": "设计模式之单例模式",
+        "excerpt":"单例模式是为了只创建一个实例。具有以下特点： 单例只能有一个实例单例必须创建自己唯一的实例单例必须向其他对象提供这一实例 常见实现方式： 懒汉模式懒汉模式当需要实例时才会创建 public class LSingleton { private static LSingleton instance; private LSingleton() { } public static LSingleton getInstance() { if (instance == null) { instance = new LSingleton(); } return instance; }} 缺点：线程不安全，当多个线程同时访问时，会出现多个对象。 线程安全懒汉模式针对上述的问题，为了保证并发情况下的线程安全，在调用getInstance()时加锁，从而保证线程的安全。 public class LSingleton { private static LSingleton instance; private LSingleton() { } public static...","categories": ["设计模式","Degsign Pattern"],
+        "tags": ["设计模式","Degsign Pattern"],
+        "url": "http://localhost:4000/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/degsign%20pattern/2018/08/11/design-pattern-singleton.html"
+      },{
         "title": "吃货必看的纪录片",
         "excerpt":"作为一个吃货，无时无刻不在种草着各种吃的。舌尖上的中国类纪录片的播出，为广大吃货们种草无数，这里慢慢列举一些纪录片的链接，以便拔草。 水果传 水果传第一集 带你去吃水果-第一集       邹族，台湾：爱玉-&gt;爱玉冰    胡志明 bean to bar    陕西 富平 马家坡：柿饼    内蒙古 根河 蓝莓酱    湛江 菠萝-&gt;郭蓉锦-&gt;凤梨酥    日本 琦玉县 梅子酒  ","categories": ["Food"],
         "tags": ["Food","吃货"],
