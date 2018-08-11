@@ -1,11 +1,11 @@
 ---
 title: "设计模式之单例模式"
 categories:
-  - 设计模式
   - Degsign Pattern
+  - 设计模式
 tags:
-  - 设计模式
   - Degsign Pattern
+  - 设计模式
 ---
 
 单例模式是为了只创建一个实例。

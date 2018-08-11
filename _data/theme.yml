@@ -37,4 +37,5 @@ google_fonts:
 
 navigation_pages:
   - about.md
+  - tags.md
   - cv.md
