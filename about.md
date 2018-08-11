@@ -1,6 +1,7 @@
 ---
 title: "About"
 layout: about
+comments: false
 ---
 
 这里记录着一些琐碎的事情，可能会撒一把狗粮
