@@ -14,17 +14,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 lang: zh-CN
-title: 小太阳的小石头
+title: 一眼千年
 email: xulei99@hotmail.com
 description: 就是个痕迹 
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: https://runnerstone.github.io # the base hostname & protocol for your site.
 author:
   name: runner
-  weibo: 能不能长点心的石头
+  weibo: 
   picture: 
 twitter_username:
-weibo_username: 能不能长点心的石头
+weibo_username: 
 github_username: runnerstone
 logo: /assets/images/panda.png # path of site logo, e.g. "/assets/images/logo.png"
 search: yes # true, false (default)
