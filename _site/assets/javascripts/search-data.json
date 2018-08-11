@@ -1,1 +1,6 @@
-var store = []
+var store = [{
+        "title": "吃货必看的纪录片",
+        "excerpt":"作为一个吃货，无时无刻不在种草着各种吃的。舌尖上的中国类纪录片的播出，为广大吃货们种草无数，这里慢慢列举一些纪录片的链接，以便拔草。 水果传 水果传第一集 带你去吃水果-第一集       邹族，台湾：爱玉-&gt;爱玉冰    胡志明 bean to bar    陕西 富平 马家坡：柿饼    内蒙古 根河 蓝莓酱    湛江 菠萝-&gt;郭蓉锦-&gt;凤梨酥    日本 琦玉县 梅子酒  ","categories": ["Food"],
+        "tags": ["Food","吃货"],
+        "url": "http://localhost:4000/food/2018/08/11/some-videos-for-food.html"
+      }]
