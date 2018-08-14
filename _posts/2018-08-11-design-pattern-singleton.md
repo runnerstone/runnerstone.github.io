@@ -84,7 +84,7 @@ public class SSingleton {
 ```
 5. 枚举类
 高级代码，写意风格。   
-> 自由序列化，保证了只有一个实例，线程安全；effective java推荐使用。
+自由序列化，保证了只有一个实例，线程安全；effective java推荐使用。
 ```java
 //effective java 推荐使用，使用较少, 调用方法EnumSingleton.Instance.doSomething()
 public enum EnumSingleton {
