@@ -1,11 +1,16 @@
 var store = [{
         "title": "设计模式之单例模式",
-        "excerpt":"单例模式是为了只创建一个实例。具有以下特点： 单例只能有一个实例单例必须创建自己唯一的实例单例必须向其他对象提供这一实例 常见实现方式： 懒汉模式懒汉模式当需要实例时才会创建 public class LSingleton { private static LSingleton instance; private LSingleton() { } public static LSingleton getInstance() { if (instance == null) { instance = new LSingleton(); } return instance; }} 缺点：线程不安全，当多个线程同时访问时，会出现多个对象。 线程安全懒汉模式针对上述的问题，为了保证并发情况下的线程安全，在调用getInstance()时加锁，从而保证线程的安全。 public class LSingleton { private static LSingleton instance; private LSingleton() { } public static...","categories": ["Degsign Pattern","设计模式"],
-        "tags": ["Degsign Pattern","设计模式"],
-        "url": "http://localhost:4000/degsign%20pattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2018/08/11/design-pattern-singleton.html"
+        "excerpt":"单例模式是为了只创建一个实例。具有以下特点： 单例只能有一个实例单例必须创建自己唯一的实例单例必须向其他对象提供这一实例 常见实现方式： 懒汉模式懒汉模式当需要实例时才会创建 public class LSingleton { private static LSingleton instance; private LSingleton() { } public static LSingleton getInstance() { if (instance == null) { instance = new LSingleton(); } return instance; }} 缺点：线程不安全，当多个线程同时访问时，会出现多个对象。 线程安全懒汉模式针对上述的问题，为了保证并发情况下的线程安全，在调用getInstance()时加锁，从而保证线程的安全。 public class LSingleton { private static LSingleton instance; private LSingleton() { } public static...","categories": ["Degsign Pattern"],
+        "tags": ["Degsign Pattern"],
+        "url": "http://localhost:4000/degsign%20pattern/2018/08/11/design-pattern-singleton.html"
       },{
         "title": "吃货必看的纪录片",
-        "excerpt":"作为一个吃货，无时无刻不在种草着各种吃的。舌尖上的中国类纪录片的播出，为广大吃货们种草无数，这里慢慢列举一些纪录片的链接，以便拔草。 水果传 水果传第一集 带你去吃水果-第一集       邹族，台湾：爱玉-&gt;爱玉冰    胡志明 bean to bar    陕西 富平 马家坡：柿饼    内蒙古 根河 蓝莓酱    湛江 菠萝-&gt;郭蓉锦-&gt;凤梨酥    日本 琦玉县 梅子酒  ","categories": ["Food"],
-        "tags": ["Food","吃货"],
+        "excerpt":"作为一个吃货，无时无刻不在种草着各种吃的。舌尖上的中国类纪录片的播出，为广大吃货们种草无数，这里慢慢列举一些纪录片的链接，以便拔草。 水果传 水果传第一集 带你去吃水果-第一集       邹族，台湾：爱玉-&gt;爱玉冰    胡志明 bean to bar    陕西 富平 马家坡：柿饼    内蒙古 根河 蓝莓酱    湛江 菠萝-&gt;郭蓉锦-&gt;凤梨酥    日本 琦玉县 梅子酒  水果传第二集 带你去吃水果-第二集       西双版啊 木瓜榕    马来西亚沙巴 水椰子    澳大利亚 指橙    布依族 刺梨 -&gt; 酿酒    马来西亚 槟城 非洲竹浴    印度尼西亚 蛇皮果  ","categories": ["Food"],
+        "tags": ["Food"],
         "url": "http://localhost:4000/food/2018/08/11/some-videos-for-food.html"
+      },{
+        "title": "设计模式之工厂模式",
+        "excerpt":"工厂模式定义一个创建对象的接口，让其子类决定自己实例化哪一个工厂类，将实例的创建工厂延迟到子类中进行。主要有三种工厂模式： 简单工厂模式 工厂方法模式 抽象工厂模式 下面就一一展开阐述。 1， 简单工厂模式 模式简单，主要应用在业务简单的情况下。简单工厂模式主要有三种角色： 工厂类 具体产品 抽象产品接口 假如说我们需要生产汽车，奔驰，宝马和奥迪，使用简单工厂模式，我们只需要告诉工厂说我们想要造什么车，直接调用工厂的方法，就行了。从上边的类图可以明白其关系。 首先，我们创建一个接口Car类，也就是抽象接口类。 public interface Car { public void create() ;}然后，针对不同的车，创建实现接口的实体类，即具体产品类。宝马车实体类： public class Bmw implements Car { @Override public void create() { System.out.println(\"BMW run!!!\"); }}奔驰车实体类： public class Benz implements Car { @Override public void create() { System.out.println(\"Benz run!!!\"); }}奥迪车实体类： public...","categories": ["Degsign Pattern"],
+        "tags": ["Degsign Pattern"],
+        "url": "http://localhost:4000/degsign%20pattern/2018/08/14/design-pattern-factory.html"
       }]

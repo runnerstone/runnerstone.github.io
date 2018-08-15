@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/degsign%20pattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2018/08/11/design-pattern-singleton.html</loc>
+<loc>http://localhost:4000/degsign%20pattern/2018/08/11/design-pattern-singleton.html</loc>
 <lastmod>2018-08-11T00:00:00+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/food/2018/08/11/some-videos-for-food.html</loc>
 <lastmod>2018-08-11T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/degsign%20pattern/2018/08/14/design-pattern-factory.html</loc>
+<lastmod>2018-08-14T00:00:00+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about.html</loc>

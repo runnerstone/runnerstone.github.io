@@ -1,8 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2018-08-11T23:42:30+08:00</updated><id>http://localhost:4000/</id><title type="html">一眼千年</title><subtitle>就是个痕迹</subtitle><author><name>runner</name></author><entry><title type="html">吃货必看的纪录片</title><link href="http://localhost:4000/food/2018/08/11/some-videos-for-food.html" rel="alternate" type="text/html" title="吃货必看的纪录片" /><published>2018-08-11T00:00:00+08:00</published><updated>2018-08-11T00:00:00+08:00</updated><id>http://localhost:4000/food/2018/08/11/some-videos-for-food</id><content type="html" xml:base="http://localhost:4000/food/2018/08/11/some-videos-for-food.html">&lt;p&gt;作为一个吃货，无时无刻不在种草着各种吃的。舌尖上的中国类纪录片的播出，为广大吃货们种草无数，这里慢慢列举一些纪录片的链接，以便拔草。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2018-08-15T21:07:10+08:00</updated><id>http://localhost:4000/</id><title type="html">一眼千年</title><subtitle>就是个痕迹</subtitle><author><name>runner</name></author><entry><title type="html">设计模式之工厂模式</title><link href="http://localhost:4000/degsign%20pattern/2018/08/14/design-pattern-factory.html" rel="alternate" type="text/html" title="设计模式之工厂模式" /><published>2018-08-14T00:00:00+08:00</published><updated>2018-08-14T00:00:00+08:00</updated><id>http://localhost:4000/degsign%20pattern/2018/08/14/design-pattern-factory</id><content type="html" xml:base="http://localhost:4000/degsign%20pattern/2018/08/14/design-pattern-factory.html">&lt;p&gt;工厂模式定义一个创建对象的接口，让其子类决定自己实例化哪一个工厂类，将实例的创建工厂延迟到子类中进行。
+主要有三种工厂模式：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;简单工厂模式&lt;/li&gt;
+    &lt;li&gt;工厂方法模式&lt;/li&gt;
+    &lt;li&gt;抽象工厂模式&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;下面就一一展开阐述。&lt;/p&gt;
+
+&lt;h1 id=&quot;1-简单工厂模式&quot;&gt;1， 简单工厂模式&lt;/h1&gt;
+&lt;p&gt;模式简单，主要应用在业务简单的情况下。&lt;br /&gt;
+简单工厂模式主要有三种角色：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;工厂类&lt;/li&gt;
+    &lt;li&gt;具体产品&lt;/li&gt;
+    &lt;li&gt;抽象产品接口&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/tech/designpattern/simplefactory.png&quot; alt=&quot;simpleFactory&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;假如说我们需要生产汽车，奔驰，宝马和奥迪，使用简单工厂模式，我们只需要告诉工厂说我们想要造什么车，直接调用工厂的方法，就行了。
+从上边的类图可以明白其关系。&lt;/p&gt;
+
+&lt;p&gt;首先，我们创建一个接口Car类，也就是抽象接口类。&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后，针对不同的车，创建实现接口的实体类，即具体产品类。
+宝马车实体类：&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bmw&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;BMW run!!!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;奔驰车实体类：&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Benz&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Benz run!!!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;奥迪车实体类：&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Audi&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Audi run!!!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;最后，创建其工厂类，能够根据传入的信息，生成实体类的对象。&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CarSimpleFactory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;createCar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;BMW&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Bmw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Benz&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Benz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Audi&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Audi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;no such car!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;写一个简单的demo，使用工厂类来实例化对象。&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CarSimpleFactroyDemo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;CarSimpleFactory&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;carSimpleFactory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CarSimpleFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;carSimpleFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createCar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;BMW&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;carSimpleFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createCar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Benz&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;carSimpleFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createCar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Audi&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;输出结果：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;BMW run!!!&lt;br /&gt;
+Benz run!!!&lt;br /&gt;
+Audi run!!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;通过简单工厂模式，可以让用户不接触实体类的情况下，完成实体的创建，
+工厂模式的使用，虽然带来了较多的代码，而且使用了多态。但是却带来了很好的拓展性，假如说工厂如果可以生产丰田汽车，只需要在工厂内加入丰田车实体类即可。扩展性得到很大的提高。&lt;/p&gt;</content><author><name>runner</name></author><category term="Degsign Pattern" /><summary type="html">工厂模式定义一个创建对象的接口，让其子类决定自己实例化哪一个工厂类，将实例的创建工厂延迟到子类中进行。 主要有三种工厂模式： 简单工厂模式 工厂方法模式 抽象工厂模式</summary></entry><entry><title type="html">吃货必看的纪录片</title><link href="http://localhost:4000/food/2018/08/11/some-videos-for-food.html" rel="alternate" type="text/html" title="吃货必看的纪录片" /><published>2018-08-11T00:00:00+08:00</published><updated>2018-08-11T00:00:00+08:00</updated><id>http://localhost:4000/food/2018/08/11/some-videos-for-food</id><content type="html" xml:base="http://localhost:4000/food/2018/08/11/some-videos-for-food.html">&lt;p&gt;作为一个吃货，无时无刻不在种草着各种吃的。舌尖上的中国类纪录片的播出，为广大吃货们种草无数，这里慢慢列举一些纪录片的链接，以便拔草。&lt;/p&gt;
 
 &lt;h1 id=&quot;水果传&quot;&gt;水果传&lt;/h1&gt;
 &lt;h2 id=&quot;水果传第一集&quot;&gt;水果传第一集&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/bangumi/play/ss22785/&quot;&gt;带你去吃水果-第一集&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/bangumi/play/ep173365&quot;&gt;带你去吃水果-第一集&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 
   &lt;ol&gt;
@@ -13,7 +112,21 @@
     &lt;li&gt;湛江 菠萝-&amp;gt;郭蓉锦-&amp;gt;凤梨酥&lt;/li&gt;
     &lt;li&gt;日本 琦玉县 梅子酒&lt;/li&gt;
   &lt;/ol&gt;
-&lt;/blockquote&gt;</content><author><name>runner</name></author><category term="Food" /><category term="吃货" /><summary type="html">作为一个吃货，无时无刻不在种草着各种吃的。舌尖上的中国类纪录片的播出，为广大吃货们种草无数，这里慢慢列举一些纪录片的链接，以便拔草。</summary></entry><entry><title type="html">设计模式之单例模式</title><link href="http://localhost:4000/degsign%20pattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2018/08/11/design-pattern-singleton.html" rel="alternate" type="text/html" title="设计模式之单例模式" /><published>2018-08-11T00:00:00+08:00</published><updated>2018-08-11T00:00:00+08:00</updated><id>http://localhost:4000/degsign%20pattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2018/08/11/design-pattern-singleton</id><content type="html" xml:base="http://localhost:4000/degsign%20pattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2018/08/11/design-pattern-singleton.html">&lt;p&gt;单例模式是为了只创建一个实例。
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;水果传第二集&quot;&gt;水果传第二集&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/bangumi/play/ep184645&quot;&gt;带你去吃水果-第二集&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;西双版啊 木瓜榕&lt;/li&gt;
+    &lt;li&gt;马来西亚沙巴 水椰子&lt;/li&gt;
+    &lt;li&gt;澳大利亚 指橙&lt;/li&gt;
+    &lt;li&gt;布依族 刺梨 -&amp;gt; 酿酒&lt;/li&gt;
+    &lt;li&gt;马来西亚 槟城 非洲竹浴&lt;/li&gt;
+    &lt;li&gt;印度尼西亚 蛇皮果&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;</content><author><name>runner</name></author><category term="Food" /><summary type="html">作为一个吃货，无时无刻不在种草着各种吃的。舌尖上的中国类纪录片的播出，为广大吃货们种草无数，这里慢慢列举一些纪录片的链接，以便拔草。</summary></entry><entry><title type="html">设计模式之单例模式</title><link href="http://localhost:4000/degsign%20pattern/2018/08/11/design-pattern-singleton.html" rel="alternate" type="text/html" title="设计模式之单例模式" /><published>2018-08-11T00:00:00+08:00</published><updated>2018-08-11T00:00:00+08:00</updated><id>http://localhost:4000/degsign%20pattern/2018/08/11/design-pattern-singleton</id><content type="html" xml:base="http://localhost:4000/degsign%20pattern/2018/08/11/design-pattern-singleton.html">&lt;p&gt;单例模式是为了只创建一个实例。
 具有以下特点：&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;单例只能有一个实例&lt;br /&gt;
@@ -91,16 +204,14 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;枚举类
-高级代码，写意风格。
-    &lt;blockquote&gt;
-      &lt;p&gt;自由序列化，保证了只有一个实例，线程安全；effective java推荐使用。&lt;/p&gt;
-      &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//effective java 推荐使用，使用较少, 调用方法EnumSingleton.Instance.doSomething()&lt;/span&gt;
+高级代码，写意风格。 &lt;br /&gt;
+自由序列化，保证了只有一个实例，线程安全；effective java推荐使用。
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//effective java 推荐使用，使用较少, 调用方法EnumSingleton.Instance.doSomething()&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EnumSingleton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
  &lt;span class=&quot;n&quot;&gt;Instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dosometing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
-    &lt;/blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;双重校验锁法&lt;br /&gt;
 线程安全，lazy loading
@@ -121,4 +232,4 @@
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>runner</name></author><category term="Degsign Pattern" /><category term="设计模式" /><summary type="html">单例模式是为了只创建一个实例。 具有以下特点： 单例只能有一个实例 单例必须创建自己唯一的实例 单例必须向其他对象提供这一实例</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>runner</name></author><category term="Degsign Pattern" /><summary type="html">单例模式是为了只创建一个实例。 具有以下特点： 单例只能有一个实例 单例必须创建自己唯一的实例 单例必须向其他对象提供这一实例</summary></entry></feed>
