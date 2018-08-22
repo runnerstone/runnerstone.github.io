@@ -107,3 +107,6 @@ public class CarSimpleFactroyDemo {
 
 # 2， 工厂模式  
 
+
+
+
