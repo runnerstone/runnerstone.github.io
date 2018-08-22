@@ -12,7 +12,7 @@ var store = [{
         "title": "设计模式之简单工厂模式",
         "excerpt":"工厂模式定义一个创建对象的接口，让其子类决定自己实例化哪一个工厂类，将实例的创建工厂延迟到子类中进行。主要有三种工厂模式： 简单工厂模式 工厂方法模式 抽象工厂模式 会针对上述工厂模式一一展开阐述。 简单工厂模式 模式简单，主要应用在业务简单的情况下。简单工厂模式主要有三种角色： 工厂类 具体产品 抽象产品接口 假如说我们需要生产汽车，奔驰，宝马和奥迪，使用简单工厂模式，我们只需要告诉工厂说我们想要造什么车，直接调用工厂的方法，就行了。从上边的类图可以明白其关系。 首先，我们创建一个接口Car类，也就是抽象接口类。 public interface Car { public void create() ;}然后，针对不同的车，创建实现接口的实体类，即具体产品类。宝马车实体类： public class Bmw implements Car { @Override public void create() { System.out.println(\"BMW run!!!\"); }}奔驰车实体类： public class Benz implements Car { @Override public void create() { System.out.println(\"Benz run!!!\"); }}奥迪车实体类： public class...","categories": ["Degsign Pattern"],
         "tags": ["Degsign Pattern"],
-        "url": "http://localhost:4000/degsign%20pattern/2018/08/14/design-pattern-factory.html"
+        "url": "http://localhost:4000/degsign%20pattern/2018/08/14/design-pattern-simple-factory.html"
       },{
         "title": "设计模式之工厂模式",
         "excerpt":"工厂模式 工厂模式让子类决定实例化哪一个类，并将类的实例化延迟到具体的子类中进行。工厂模式主要有4种角色： 抽象工厂 具体工厂 抽象产品 具体产品 仍然采用上边的例子，首先，我们有一个抽象产品的类。 #抽象产品角色public interface Car{ public void run();}针对不同的车型，我们需要实现具体产品，也即是具体产品类。 s宝马车实体类： public class Bmw implements Car{ public Bmw() { System.out.println(\"BMW Created!!!\"); } @Override public void run() { System.out.println(\"BMW Run!!!\"); }}奥迪车实体类： public class Audi implements Car{ public Audi() { System.out.println(\"Audi Created!!!\"); } @Override public void run() { System.out.println(\"Audi...","categories": ["Degsign Pattern"],
