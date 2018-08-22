@@ -14,7 +14,7 @@ tags:
 3. 抽象产品  
 4. 具体产品  
 
-![factory](/assets/images/tech/designpattern/factorypattern.png)
+![factory](/assets/images/tech/designpattern/factory.png)
 
 
 仍然采用上边的例子，首先，我们有一个抽象产品的类。
