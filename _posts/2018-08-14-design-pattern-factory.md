@@ -1,5 +1,5 @@
 ---
-title: "设计模式之工厂模式"
+title: "设计模式之简单工厂模式"
 categories:
   - Degsign Pattern
 tags:
@@ -13,9 +13,9 @@ tags:
 3. 抽象工厂模式  
 
 
-下面就一一展开阐述。  
+会针对上述工厂模式一一展开阐述。  
 
-# 1， 简单工厂模式  
+# 简单工厂模式  
 模式简单，主要应用在业务简单的情况下。  
 简单工厂模式主要有三种角色：
 > 1. 工厂类
@@ -104,70 +104,3 @@ public class CarSimpleFactroyDemo {
 
 通过简单工厂模式，可以让用户不接触实体类的情况下，完成实体的创建，
 工厂模式的使用，虽然带来了较多的代码，而且使用了多态。但是却带来了很好的拓展性，假如说工厂如果可以生产丰田汽车，只需要在工厂内加入丰田车实体类即可。扩展性得到很大的提高。
-
-# 2， 工厂模式  
-工厂模式让子类决定实例化哪一个类，并将类的实例化延迟到具体的子类中进行。  
-工厂模式主要有4种角色：
-> 1. 抽象工厂  
-2. 具体工厂  
-3. 抽象产品  
-4. 具体产品  
-
-![factory](/assets/images/tech/designpattern/factoryPattern.png)
-
-仍然采用上边的例子，首先，我们有一个抽象产品的类。
-```java
-#抽象产品角色
-public interface Car
-{
-    public void run();
-
-}
-```
-针对不同的车型，我们需要实现具体产品，也即是具体产品类。
-宝马车实体类：
-```java
-public class Bmw implements Car
-{
-    public Bmw() {
-        System.out.println("BMW Created!!!");
-    }
-    @Override
-    public void run()
-    {
-        System.out.println("BMW Run!!!");
-    }
-}
-```
-奥迪车实体类：
-```java
-public class Audi implements Car
-{
-    public Audi()
-    {
-        System.out.println("Audi Created!!!");
-    }
-
-    @Override
-    public void run()
-    {
-        System.out.println("Audi Run!!!");
-    }
-}
-```
-奔驰车实体类：
-```java
-public class Benz implements Car
-{
-    public Benz()
-    {
-        System.out.println("Benz Created!!!");
-    }
-
-    @Override
-    public void run()
-    {
-        System.out.println("Benz Run!!!");
-    }
-}
-```
