@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2018-08-26T11:16:33+08:00</updated><id>http://localhost:4000/</id><title type="html">一眼千年</title><subtitle>就是个痕迹</subtitle><author><name>runner</name></author><entry><title type="html">设计模式原则开闭原则</title><link href="http://localhost:4000/degsign%20pattern/2018/08/26/design-pattern-open-close-principle.html" rel="alternate" type="text/html" title="设计模式原则开闭原则" /><published>2018-08-26T00:00:00+08:00</published><updated>2018-08-26T00:00:00+08:00</updated><id>http://localhost:4000/degsign%20pattern/2018/08/26/design-pattern--open-close-principle</id><content type="html" xml:base="http://localhost:4000/degsign%20pattern/2018/08/26/design-pattern-open-close-principle.html"></content><author><name>runner</name></author><category term="Degsign Pattern" /><summary type="html"></summary></entry><entry><title type="html">设计模式之工厂模式</title><link href="http://localhost:4000/degsign%20pattern/2018/08/22/design-pattern-factory.html" rel="alternate" type="text/html" title="设计模式之工厂模式" /><published>2018-08-22T00:00:00+08:00</published><updated>2018-08-22T00:00:00+08:00</updated><id>http://localhost:4000/degsign%20pattern/2018/08/22/design-pattern-factory</id><content type="html" xml:base="http://localhost:4000/degsign%20pattern/2018/08/22/design-pattern-factory.html">&lt;h1 id=&quot;工厂模式&quot;&gt;工厂模式&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2018-08-26T18:25:33+08:00</updated><id>http://localhost:4000/</id><title type="html">一眼千年</title><subtitle>就是个痕迹</subtitle><author><name>runner</name></author><entry><title type="html">设计模式原则开闭原则</title><link href="http://localhost:4000/degsign%20pattern/2018/08/26/design-pattern-open-close-principle.html" rel="alternate" type="text/html" title="设计模式原则开闭原则" /><published>2018-08-26T00:00:00+08:00</published><updated>2018-08-26T00:00:00+08:00</updated><id>http://localhost:4000/degsign%20pattern/2018/08/26/design-pattern--open-close-principle</id><content type="html" xml:base="http://localhost:4000/degsign%20pattern/2018/08/26/design-pattern-open-close-principle.html">&lt;p&gt;#开闭原则&lt;/p&gt;
+
+&lt;h2 id=&quot;开闭原则的定义&quot;&gt;开闭原则的定义：&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Software entities like classes,modules and functions should be open for extension but closed for modifications.&lt;br /&gt;
+任何的软件实体，如类、模块和函数等，应该对拓展开放，对修改关闭。 &lt;br /&gt;
+开闭原则是面向对象设计中“可复用设计”的基石，其他设计原则是实现开闭原则的手段。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;为何提出开闭原则&quot;&gt;为何提出开闭原则？&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;对于软件实体而言，修改和变化是其生命周期中非常常见和重要的，例如因为变化，维护和升级等原因，需要对原有代码进行修改，这就可能给旧代码或者功能引入错误。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;常见的变化有那种？&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;逻辑的变化，具体而言是指代码逻辑需要变化。&lt;/li&gt;
+    &lt;li&gt;模块的变化，这是指程序中一个模块发生变化，这样的变化带来的影响将是巨大的，尤其是越是底层模块的修改。&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;开闭原则的意义？&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;开闭原则保证了面向对象&lt;/li&gt;
+    &lt;li&gt;开闭原则是最基础的设计原则，其他五个原则是开闭原则的具体实现。&lt;/li&gt;
+    &lt;li&gt;开闭原则的目的是提高代码的可复用性。&lt;/li&gt;
+    &lt;li&gt;开闭原则可以提高复用性。&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;如何在编码过程中使用开闭原则&quot;&gt;如何在编码过程中使用开闭原则&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;抽象约束&lt;/li&gt;
+    &lt;li&gt;封装变化&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;</content><author><name>runner</name></author><category term="Degsign Pattern" /><summary type="html">#开闭原则</summary></entry><entry><title type="html">设计模式之工厂模式</title><link href="http://localhost:4000/degsign%20pattern/2018/08/22/design-pattern-factory.html" rel="alternate" type="text/html" title="设计模式之工厂模式" /><published>2018-08-22T00:00:00+08:00</published><updated>2018-08-22T00:00:00+08:00</updated><id>http://localhost:4000/degsign%20pattern/2018/08/22/design-pattern-factory</id><content type="html" xml:base="http://localhost:4000/degsign%20pattern/2018/08/22/design-pattern-factory.html">&lt;h1 id=&quot;工厂模式&quot;&gt;工厂模式&lt;/h1&gt;
 &lt;p&gt;工厂模式让子类决定实例化哪一个类，并将类的实例化延迟到具体的子类中进行。&lt;br /&gt;
 工厂模式主要有4种角色：&lt;/p&gt;
 &lt;blockquote&gt;
