@@ -18,4 +18,9 @@ var store = [{
         "excerpt":"工厂模式 工厂模式让子类决定实例化哪一个类，并将类的实例化延迟到具体的子类中进行。工厂模式主要有4种角色： 抽象工厂 具体工厂 抽象产品 具体产品 仍然采用上边的例子，首先，我们有一个抽象产品的类。 #抽象产品角色public interface Car{ public void run();}针对不同的车型，我们需要实现具体产品，也即是具体产品类。 s宝马车实体类： public class Bmw implements Car{ public Bmw() { System.out.println(\"BMW Created!!!\"); } @Override public void run() { System.out.println(\"BMW Run!!!\"); }}奥迪车实体类： public class Audi implements Car{ public Audi() { System.out.println(\"Audi Created!!!\"); } @Override public void run() { System.out.println(\"Audi...","categories": ["Degsign Pattern"],
         "tags": ["Degsign Pattern"],
         "url": "http://localhost:4000/degsign%20pattern/2018/08/22/design-pattern-factory.html"
+      },{
+        "title": "设计模式原则开闭原则",
+        "excerpt":"","categories": ["Degsign Pattern"],
+        "tags": ["Degsign Pattern"],
+        "url": "http://localhost:4000/degsign%20pattern/2018/08/26/design-pattern-open-close-principle.html"
       }]
