@@ -6,7 +6,7 @@ tags:
   - Degsign Pattern
 ---
 
-#开闭原则
+# 开闭原则
 
 ## 开闭原则的定义：
 >  Software entities like classes,modules and functions should be open for extension but closed for modifications.  
@@ -20,7 +20,7 @@ tags:
 > 1. 逻辑的变化，具体而言是指代码逻辑需要变化。  
 > 2. 模块的变化，这是指程序中一个模块发生变化，这样的变化带来的影响将是巨大的，尤其是越是底层模块的修改。
 
-开闭原则的意义？
+## 开闭原则的意义？
 > 1. 开闭原则保证了面向对象  
 > 2. 开闭原则是最基础的设计原则，其他五个原则是开闭原则的具体实现。  
 > 3. 开闭原则的目的是提高代码的可复用性。  
