@@ -115,3 +115,16 @@ public class NutritionFacts {
 >（2）如果两个对象相同， equals方法一定返回true，并且这两个对象的HashCode一定相同；  
 >（3）两个对象的HashCode相同，并不一定表示两个对象就相同，即equals()不一定为true，只能说明这两个对象在一个散列存储结构中
 ### 10，始终要覆盖toString方法
+>toString方法应该返回对象中包含的所有值得关注的信息   
+### 11，谨慎地覆盖clone
+### 12，考虑实现Comparable接口
+```java
+public int compareTo( NumberSubClass referenceName )
+```
+>referenceName -- 可以是一个 Byte, Double, Integer, Float, Long 或 Short 类型的参数。   
+>如果指定的数与参数相等返回0  
+>如果指定的数小于参数返回 -1  
+>如果指定的数大于参数返回 1 
+
+## 第4章，类和接口
+### 13，使类和成员的可访问性最小化
