@@ -135,3 +135,40 @@ public int compareTo( NumberSubClass referenceName )
 >1.2 包级私有的，package-private：声明该成员的包内部的任何类都可以访问这个成员，技术上称为缺省(default)访问级别，没有成员指定访问修饰符。   
 >1.3 受保护的，protected：声明该成员的类的子类可以访问，并且声明该包内部的任何类也可以访问这个成员   
 >1.4 共有的，public：在任何地方都可以访问   
+### 14, 在公有类中使用访问方法而非公有域
+>如果类可以在它所在的包外部进行访问，就提供访问方法
+```java
+class Point {
+	private double x;
+	private double y;
+
+	public Point(double x, double y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+}
+```
+>对于类是包级私有的，或者是私有的嵌套类，直接暴露它的数据域并没有本质的错误。
+### 15，使可变性最小化
+>五条规则   
+>1，不要提供任何会修改对象状态的方法   
+>2，保证类不会被扩展   
+>3，使所有的域都是final   
+>4，使所有的域都成为私有的
+>5，确保对于任何可变组件的互斥访问
