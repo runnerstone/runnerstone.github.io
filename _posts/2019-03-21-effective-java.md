@@ -185,4 +185,88 @@ class Point {
 >4，骨架实现类，将接口和抽象类的优点结合起来。优美之处在于为抽象类提供了实现的帮助，但是又不强加“抽象类被用作类型定义时”所特有的严格限制。   虚拟多重继承      
 >
 ### 19，接口只用于定义类型
->
+>常量接口是对接口的不良使用   
+>要导出常量，常见的合理选择：  
+>1, 若这些常量与某个现有的类或者接口紧密相关，应该将这些常量添加到这个类或者接口中。  
+>2, 若这些常量最好被看作枚举类型的成员，就应该用枚举类型(enum type)来导出这些常量  
+>3, 否则，应该使用不可实例化的工具类(utility class)来导出这些常量
+
+>简而言之，接口应该只被用来定义类型，不应该被用来导出常量。
+
+### 20，层次优于标签类
+>标签类过于冗长
+```java
+class Figure {
+	enum Shape {
+		RECTANGLE, CIRCLE
+	};
+
+	// Tag field - the shape of this figure
+	final Shape shape;
+
+	// These fields are used only if shape is RECTANGLE
+	double length;
+	double width;
+
+	// This field is used only if shape is CIRCLE
+	double radius;
+
+	// Constructor for circle
+	Figure(double radius) {
+		shape = Shape.CIRCLE;
+		this.radius = radius;
+	}
+
+	// Constructor for rectangle
+	Figure(double length, double width) {
+		shape = Shape.RECTANGLE;
+		this.length = length;
+		this.width = width;
+	}
+
+	double area() {
+		switch (shape) {
+		case RECTANGLE:
+			return length * width;
+		case CIRCLE:
+			return Math.PI * (radius * radius);
+		default:
+			throw new AssertionError();
+		}
+	}
+}
+```
+>标签类正是类层次的一种简单仿效
+>如何将标签类转为类层次  
+>1, 为标签类中每个方法都定义一个包含抽象方法的抽象类，每个方法的行为都依赖于标签值
+```java
+abstract class Figure {
+	abstract double area();
+}
+```
+>2，为每种原始标签类都定义根类的具体子类。
+```java
+class Circle extends Figure {
+	final double radius;
+	Circle(double radius) {
+		this.radius = radius;
+	}
+	double area() {
+		return Math.PI * (radius * radius);
+	}
+}
+```
+>好处: 可以用来反映类型之间的本质的层次关系，有助于增强灵活性，并进行更好的编译时检查类型。
+```JAVA
+class Square extends Rectangle {
+	Square(double side) {
+		super(side, side);
+	}
+}
+```
+### 21，用函数对象表示策略*
+### 22，优先考虑静态成员类
+>嵌套类(nested class)，指被定义在另一个类的内部的类。目的是为外围类(enclosing class)提供服务。   
+>嵌套类种类：静态成员类(static member class), 非静态成员类(nonstaic member class)，匿名类(anonymous class)和局部类(local class)。   
+
+>1，静态成员类：
