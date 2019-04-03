@@ -285,7 +285,28 @@ List<String>
 >尽可能消除每一个非受检警告
 >如果无法消除警告，同时可以证明引起警告的代码时类型安全的，（只有在这种情况下才）可以用一个@SuppressWarnings("unchecked")注解来禁止这条警告。   
 >SuppressWarning注解可以用在任何粒度的级别中，从单独的局部变量声明到整个类都可以，应该始终在尽可能小的范围中使用该注解。   
->每当使用该注解时，都要添加一条注释，说明为这么这么做时安全的。  
+>每当使用该注解时，都要添加一条注释，说明为这么这么做时安全的。     
+### 25, 列表优先于数组*
+>1，数据是协变的，泛型是不可变的。  
+>2，数据是具体化的，数组会在运行时发现所犯的错误，列表则可以在编译时发现错误。   
+>3，数组和泛型不能很好地混合使用。例如List<E>[]。   
+### 26，优先考虑泛型*
+### 27，优先考虑泛型方法*
+### 28，利用有限制通配符来提升API的灵活性。*
+>PECS，表示producer-extends，consumer-super
+```JAVA
+	public void pushAll(Iterable<? extends E> src) {
+		for (E e : src)
+			push(e);
+	}
+
+  	// Wildcard type for parameter that serves as an E consumer
+	public void popAll(Collection<? super E> dst) {
+		while (!isEmpty())
+			dst.add(pop());
+	}
+```
+
 
 
 
