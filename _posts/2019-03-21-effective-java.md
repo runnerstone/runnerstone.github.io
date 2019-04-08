@@ -241,15 +241,19 @@ class Figure {
 	}
 }
 ```   
+
 >标签类正是类层次的一种简单仿效
 >如何将标签类转为类层次  
 >1, 为标签类中每个方法都定义一个包含抽象方法的抽象类，每个方法的行为都依赖于标签值
+
 ```java
 abstract class Figure {
 	abstract double area();
 } 
 ```   
->2，为每种原始标签类都定义根类的具体子类。    
+
+>2，为每种原始标签类都定义根类的具体子类。 
+
 ```java
 class Circle extends Figure {
 	final double radius;
@@ -261,7 +265,9 @@ class Circle extends Figure {
 	}
 }    
 ```    
->好处: 可以用来反映类型之间的本质的层次关系，有助于增强灵活性，并进行更好的编译时检查类型。      
+
+>好处: 可以用来反映类型之间的本质的层次关系，有助于增强灵活性，并进行更好的编译时检查类型。  
+
 ```JAVA
 class Square extends Rectangle {
 	Square(double side) {
@@ -269,8 +275,11 @@ class Square extends Rectangle {
 	}
 }
 ```    
+
 ### 21，用函数对象表示策略*    
+
 ### 22，优先考虑静态成员类*     
+
 >嵌套类(nested class)，指被定义在另一个类的内部的类。目的是为外围类(enclosing class)提供服务。   
 >嵌套类种类：静态成员类(static member class), 非静态成员类(nonstaic member class)，匿名类(anonymous class)和局部类(local class)。      
 
