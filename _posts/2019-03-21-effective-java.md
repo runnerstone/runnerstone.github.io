@@ -200,6 +200,7 @@ class Point {
 
 ### 20，层次优于标签类
 >标签类过于冗长
+
 ```java
 class Figure {
 	enum Shape {
@@ -305,9 +306,12 @@ List<String>
 >2，数据是具体化的，数组会在运行时发现所犯的错误，列表则可以在编译时发现错误。   
 >3，数组和泛型不能很好地混合使用。例如List<E>[]。   
 ### 26，优先考虑泛型*
+
 ### 27，优先考虑泛型方法*
+
 ### 28，利用有限制通配符来提升API的灵活性。*
->PECS，表示producer-extends，consumer-super
+>PECS，表示producer-extends，consumer-super 
+
 ```JAVA
 	public void pushAll(Iterable<? extends E> src) {
 		for (E e : src)
@@ -320,6 +324,64 @@ List<String>
 			dst.add(pop());
 	}
 ```
+
+### 29，优先考虑安全的异构容器*
+
+## 第6章，枚举和注解
+### 30，用enum代替int常量*   
+> 枚举类型(enum type)是指由一组固定的常量组成合法值的类型，例如一年的季节，或者扑克牌的花色    
+> int枚举类型有很多不足：   
+> 1，类型安全性和使用方便性方面没有任何帮助。2，采用int枚举模式的程序是十分脆弱的。3，将int枚举常量翻译成可打印的字符串，并没有很便利的方法。   
+> 常见变体：String枚举模式   
+>java枚举类型是通过公有的静态final域为每个枚举常量导出实例的类。其没有访问的构造器，是真正的final，是实例受控的，是单例的泛型化，本质上是单元素的枚举。   
+>优点：1，提供编译时的类型安全。2，枚举类型还允许任意添加方法和域，并实现任意的接口。
+>为何要将方法或者域添加到枚举类型中呢？   
+>首先，将数据与它的常量关联起来，为了将数据与枚举常量关联起来，得声明实例域，并编写一个带有数据并将数据保存在域中的构造器。
+
+```java
+public enum Planet {
+	MERCURY(3.302e+23, 2.439e6), VENUS(4.869e+24, 6.052e6), EARTH(5.975e+24,
+			6.378e6), MARS(6.419e+23, 3.393e6), JUPITER(1.899e+27, 7.149e7), SATURN(
+			5.685e+26, 6.027e7), URANUS(8.683e+25, 2.556e7), NEPTUNE(1.024e+26,
+			2.477e7);
+	private final double mass; // In kilograms
+	private final double radius; // In meters
+	private final double surfaceGravity; // In m / s^2
+
+	// Universal gravitational constant in m^3 / kg s^2
+	private static final double G = 6.67300E-11;
+
+	// Constructor
+	Planet(double mass, double radius) {
+		this.mass = mass;
+		this.radius = radius;
+		surfaceGravity = G * mass / (radius * radius);
+	}
+
+	public double mass() {
+		return mass;
+	}
+
+	public double radius() {
+		return radius;
+	}
+
+	public double surfaceGravity() {
+		return surfaceGravity;
+	}
+
+	public double surfaceWeight(double mass) {
+		return mass * surfaceGravity; // F = ma
+	}
+}
+```
+
+> 枚举有一个静态的values方法，按照声明顺序返回它的值数据。
+
+
+
+
+
 
 
 
