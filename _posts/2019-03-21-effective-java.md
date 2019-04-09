@@ -403,7 +403,9 @@ public enum Ensemble {
 }
 ```
 
-### 32，用EnumSet代替位域
+### 32，用EnumSet代替位域*
+>位域: bit field
+### 33, 用EnumMap代替序数索引*
 
 
 
