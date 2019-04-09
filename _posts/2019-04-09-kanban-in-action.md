@@ -1,9 +1,9 @@
 ---
 title: "看板实战"
 categories:
-  - kanban，敏捷开发
+  - kanban, agile
 tags:
-  - 看板，敏捷开发
+  - kanban, agile
 ---
 
 # 看板实战
@@ -35,4 +35,4 @@ tags:
 * 发挥组织中的各级领导力
 ---
 ## 第三章，工作可视化
-###
+### 
