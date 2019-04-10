@@ -405,11 +405,141 @@ public enum Ensemble {
 
 ### 32，用EnumSet代替位域*
 >位域: bit field
-### 33, 用EnumMap代替序数索引*
+### 33, 用EnumMap代替序数索引*   
+---
+### 34，用接口模拟可伸缩的枚举
+>枚举的可伸缩性被证明不是什么好事情
+>操作码，operation code，是可伸缩的枚举类型。它的元素表示在某种机器上的那些操作，枚举类型通过给操作码类型和枚举定义接口，来实现任意接口。   
+```JAVA
 
 
+public interface Operation {
+	double apply(double x, double y);
+}
 
+public enum BasicOperation implements Operation {
+	PLUS("+") {
+		public double apply(double x, double y) {
+			return x + y;
+		}
+	},
+	MINUS("-") {
+		public double apply(double x, double y) {
+			return x - y;
+		}
+	},
+	TIMES("*") {
+		public double apply(double x, double y) {
+			return x * y;
+		}
+	},
+	DIVIDE("/") {
+		public double apply(double x, double y) {
+			return x / y;
+		}
+	};
+	private final String symbol;
 
+	BasicOperation(String symbol) {
+		this.symbol = symbol;
+	}
+
+	@Override
+	public String toString() {
+		return symbol;
+	}
+}
+
+```
+
+>上述例子中的枚举类型，BasicOperation是不可拓展的，但是其接口Operation是可以拓展的，其可以用来表示API中的操作的接口类型。
+```JAVA
+public enum ExtendedOperation implements Operation {
+	EXP("^") {
+		public double apply(double x, double y) {
+			return Math.pow(x, y);
+		}
+	},
+	REMAINDER("%") {
+		public double apply(double x, double y) {
+			return x % y;
+		}
+	};
+
+	private final String symbol;
+
+	ExtendedOperation(String symbol) {
+		this.symbol = symbol;
+	}
+
+	@Override
+	public String toString() {
+		return symbol;
+	}
+}
+
+```
+> 虽然无法编写可扩展的枚举类型，却可以通过编写接口以及实现该接口的基础枚举类型，对它进行模拟。
+
+---
+
+### 35，注解优先于命名模式
+>命名模式(naming pattern).
+>缺点：1，文字拼写错误会导致失败，且没有任何提示；2，无法确保它们只用于相应的程序元素上。3，它们没有提供将参数值与程序元素关联起来的好方法。
+
+类如代码：
+```JAVA
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface Test {
+}
+```
+
+>注解(annotation)。注解类型声明中的注解被称为元注解(meta-annotation). `@Retention(RetentionPolicy.RUNTIME)`元注解表明，`Test`注解应该在运行时保留，如果没有保留，测试工具就无法知道`Test`注解。`@Target(ElementType.METHOD)`则表示`Test`注解只在方法声明中才是合法的。
+
+>注解的使用，以`Test`注解为例，被称作标记注解(marker annotation)。   
+>Example
+```JAVA
+public class Sample {
+	@Test
+	public static void m1() {
+	} // Test should pass
+
+	public static void m2() {
+	}
+
+	@Test
+	public static void m3() { // Test Should fail
+		throw new RuntimeException("Boom");
+	}
+
+	public static void m4() {
+	}
+
+	@Test
+	public void m5() {
+	} // INVALID USE: nonstatic method
+
+	public static void m6() {
+	}
+
+	@Test
+	public static void m7() { // Test should fail
+		throw new RuntimeException("Crash");
+	}
+
+	public static void m8() {
+	}
+}
+```
+
+---
+### 36，坚持使用Override注解
+>Override只能在方法声明中使用，它表示被注解的方法声明覆盖了超类型中的一个声明。   
+>在你想要覆盖超类声明的每个方法声明中使用Override注解。   
+
+---
+### 37，用标记接口定义类型
 
 
 
